@@ -25,12 +25,51 @@ def odds_and_evens(string,bool)
     end
 end
 end
+odds_and_evens("abcdefg",true)
+=end
+=begin
+
+def odds_and_evens(string,boo)
+    new_str=""
+        if boo == true    
+       
+            string.length.times{|ch|  new_str = new_str+string[ch] if ch.odd?}
+           
+        else
+        
+            string.length.times{|ch|  new_str = new_str+string[ch] if ch.even?}
+        end
+        return new_str 
+end
+print odds_and_evens("abcdefg",false)
 =end
 
 def odds_and_evens(string,boo)
-    if boo == true    
-        string.each{|char| puts char if string[char+1].even?}
-    else
-        string.each{|char| puts char if string[char+1].odd?}
-    end
+    new_str= ""
+    string.length.times do |num|
+        new_str = new_str + string[num] if (boo == true) && num.odd?
+        new_str =new_str+ string[num] if (boo == false) && num.even?    
+    num= num+1
+    end 
+    return new_str
 end
+print odds_and_evens("abcdefg",true)
+=begin
+def odds_and_evens(string, return_odds)
+
+    to_return = ""
+  
+    string.size.times do |index|
+  
+      next if return_odds && index.even?
+  
+      next if !return_odds && index.odd?
+  
+      to_return << string[index]
+  
+    end
+  
+    to_return
+  
+  end
+  =end 
